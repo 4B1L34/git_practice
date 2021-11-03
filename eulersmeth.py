@@ -26,10 +26,10 @@ for i in range(1,n):
     y[i] = deltax*(-2*y[i-1] + 4) + y[i-1]
 
 for i in range(1,n):
-    z[i] = 2 - (2.71828)**(-2*x[i])
+    z[i] = 2 - math.e**(-2*x[i])
     
 for i in range(1, n):
-    error[i] = np.absolute(((y[i] - z[i]) / z[i]) * 100)
+    error[i] = np.absolute(((z[i] - y[i]) / z[i]) * 100)
 
 for i in range(n):
     print("Approximate: (%.0f) " % (i+1))
